@@ -46,6 +46,8 @@ struct ContentView: View {
             let minutes = (components.minute ?? 0) * 60
             
             let prediction = try model.prediction(wake: Int64(hour + minutes), estimatedSleep: sleepAmount, coffee: Int64(coffeeAmount))
+            
+            let sleepTime = wakeUp - prediction.actualSleep
         } catch {
             
         }
